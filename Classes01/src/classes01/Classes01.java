@@ -16,9 +16,9 @@ public class Classes01 {
         c1.status();
         c1.rabiscar();
         
-        c2.cor = "preta";
+        c2.cor = "vermelha";
         c2.ponta = 1.0f;
-        c2.carga = 90;
+        c2.carga = 90;  
         c2.destampar();
         c2.status();
         c2.rabiscar();
