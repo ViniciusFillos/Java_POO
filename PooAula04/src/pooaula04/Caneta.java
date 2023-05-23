@@ -5,10 +5,11 @@ public class Caneta {
     private float ponta;
     private boolean tampa;
     private String cor;
-    
-    public Caneta(){
-        this.tampar();
-        this.cor = "Azul";
+    //ALT+INSERT
+    public Caneta(String model, String cor, float ponta) {
+        this.model = model;
+        this.ponta = ponta;
+        this.cor = cor;
     }
     public String getModel(){
         return this.model;
