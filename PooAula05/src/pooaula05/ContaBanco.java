@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class ContaBanco {
     Scanner sc = new Scanner(System.in);
-    int contas=0;
+    int contas=000000;
     public int numConta;
     protected String tipo;
     private String dono;
@@ -86,6 +86,7 @@ public class ContaBanco {
             this.setStatus(false);
             this.setDono("");
             this.setNumConta(0);
+            this.setTipo("Null");
             System.out.println("Sua conta foi encerrada!");
             contas--;
         } else{
@@ -96,7 +97,6 @@ public class ContaBanco {
     public void Depositar(){
         System.out.println("Qual valor deseja depositar? ");
         this.setSaldo(this.saldo+sc.nextFloat());
-        System.out.println("Sua conta ficou com o valor de "+this.getSaldo());
     }
     
     public float Sacar(float valor){
@@ -112,10 +112,14 @@ public class ContaBanco {
     public void PagarMensal(){
         if(this.tipo.equals("CC")){
             this.setSaldo(this.saldo-12);
-            System.out.println("Sua conta ficou com o valor de "+this.getSaldo());
         } else{
             this.setSaldo(this.saldo-20);
-            System.out.println("Sua conta ficou com o valor de "+this.getSaldo());
         }
+    }
+    public void review(){
+        System.out.println("\nNumConta "+this.getNumConta());
+        System.out.println("Dono "+this.getDono());
+        System.out.println("Saldo "+this.getSaldo());
+        System.out.println("Tipo "+this.getTipo()+"\n");
     }
 }
