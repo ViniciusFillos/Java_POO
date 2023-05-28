@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class ContaBanco {
     Scanner sc = new Scanner(System.in);
-    int contas=000000;
     public int numConta;
     protected String tipo;
     private String dono;
@@ -61,9 +60,7 @@ public class ContaBanco {
         System.out.println("Voce deseja abrir uma conta?(s/n) ");
         String res = sc.next();
         if(res.equals("s")){
-            contas++;
             this.setStatus(true);
-            this.setNumConta(contas);
             
             System.out.println("Qual o nome do dono da conta?");
             String nome = sc.next();
@@ -88,25 +85,24 @@ public class ContaBanco {
             this.setNumConta(0);
             this.setTipo("Null");
             System.out.println("Sua conta foi encerrada!");
-            contas--;
-        } else{
-            System.out.println("Voce não pode finalizar o processo tendo um valor em sua conta");
+        } else if(this.saldo>0){
+            System.out.println("Voce não pode finalizar o processo tendo um valor em sua conta!");
+        } else {
+            System.out.println("A conta não pode ser fechada em débito!");
         }
     }
     
-    public void Depositar(){
-        System.out.println("Qual valor deseja depositar? ");
-        this.setSaldo(this.saldo+sc.nextFloat());
+    public void Depositar(float deposito){
+        this.setSaldo(this.saldo+deposito);
     }
     
-    public float Sacar(float valor){
+    public void Sacar(float valor){
 
         if(this.saldo-valor<0){
             System.out.println("Voce nao tem esse valor para sacar.");
         } else{
             this.setSaldo(this.saldo-valor);
         }
-        return this.saldo;
     }
     
     public void PagarMensal(){
@@ -117,9 +113,12 @@ public class ContaBanco {
         }
     }
     public void review(){
-        System.out.println("\nNumConta "+this.getNumConta());
+        System.out.println("\n-------------------");
+        System.out.println("NumConta "+this.getNumConta());
         System.out.println("Dono "+this.getDono());
         System.out.println("Saldo "+this.getSaldo());
-        System.out.println("Tipo "+this.getTipo()+"\n");
+        System.out.println("Tipo "+this.getTipo());
+        System.out.println("-------------------\n");
+
     }
 }
