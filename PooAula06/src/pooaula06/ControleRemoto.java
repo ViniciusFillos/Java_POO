@@ -93,13 +93,15 @@ public class ControleRemoto implements Controlador{
     }
 
     public void play() {
-        if(this.isLigado() && !(this.isTocando()))
+        if(this.isLigado() && !(this.isTocando())){
             this.setTocando(true);
+        }
     }
 
     public void pause() {
-        if(this.isLigado() && this.isTocando())
+        if(this.isLigado() && this.isTocando()){
             this.setTocando(false);
+        }
     }
     
     
