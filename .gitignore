@@ -26,6 +26,5 @@ replay_pid*
 *.mf
 
 *.xml
-FazerCompras/build/classes/.netbeans_automatic_build
-FazerCompras/build/classes/.netbeans_update_resources
+
 
