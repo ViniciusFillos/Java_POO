@@ -11,9 +11,11 @@ public class PooAula07 {
         l[4] = new Lutador("UFOCobol", "Brasil", 37, 5, 4, 3, 1.70f, 119.3f);
         l[5] = new Lutador("Nerdaart", "EUA", 30, 12, 2, 4, 1.81f, 105.7f);
         
-        for(int i=0; i<6;i++){
-            l[i].apresentar();
-        }
+        Luta UEC01 = new Luta();
+        UEC01.marcarLuta(l[0], l[1]);
+        UEC01.Lutar();
+        l[0].status();
+        l[1].status();
     }
     
 }
