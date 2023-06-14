@@ -43,8 +43,9 @@ public class Video implements AcoesVideo{
         return rating;
     }
 
-    public void setRating(float rating) {
-        this.rating = rating;
+    public void setRating(int rating) {
+        this.rating += rating;
+        this.rating /= 2;
     }
 
     public int getViews() {
